@@ -1,0 +1,53 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.circle {
+    position: relative;    
+    border-radius: 50%;
+    border: none;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+
+   
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: #000;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    left: 4px;
+    z-index: 1000;
+
+}
+
+.circle::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: #000;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 1000;
+    background: linear-gradient(to bottom right,rgb(223, 52, 9) 40%, rgb(141, 23, 5) 50%, rgb(243, 208, 12) 30%, rgb(255, 255, 4) 100%, rgb(230, 190, 14) 10%); 
+    z-index: -1;
+    filter: blur(40px);
+}
+
